@@ -18,9 +18,9 @@ app.get(`/`,(req,res)=> {
 app.use('/posts',postRoutes);
 
 // Connecting to Mongo Atlas (The Database)
-// mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true,useUnifiedTopology: true },()=>{
-//     console.log('connected to db');
-// });
+mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true,useUnifiedTopology: true },()=>{
+    console.log('connected to db');
+});
 
 // Start Listening to the server
 const PORT = process.env.PORT || 5000;
