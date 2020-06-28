@@ -23,7 +23,7 @@ mongoose.connect(process.env.DB_CONNECTION || process.env.MONGO_URI,{ useNewUrlP
 
 // checking if connected
 mongoose.connection.on('connected',()=>{
-    console.log('mongoose is connected');
+    console.log('mongoose iss connected');
 });
 
 // Start Listening to the server
