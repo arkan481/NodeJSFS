@@ -19,7 +19,11 @@ app.use('/posts',postRoutes);
 
 // Connecting to Mongo Atlas (The Database)
 mongoose.connect(process.env.DB_CONNECTION || process.env.MONGO_URI,{ useNewUrlParser: true,useUnifiedTopology: true },()=>{
-    console.log('connected to db');
+});
+
+// checking if connected
+mongoose.connection.on('connected',()=>{
+    console.log('mongoose is connected');
 });
 
 // Start Listening to the server
